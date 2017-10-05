@@ -1,0 +1,2 @@
+sudo apt-get remove --auto-remove gearman-job-server
+sudo apt-get purge --auto-remove gearman-job-server
