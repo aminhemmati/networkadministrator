@@ -1,0 +1,12 @@
+install gearman-job-server
+install gearmand
+install gearman-tools
+connect to worker
+install naemon
+install thruck
+-----------
+install omd destributed monitoring 
+
+link ----------
+
+http://gearman.org/getting-started/
