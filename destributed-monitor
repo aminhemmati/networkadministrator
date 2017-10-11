@@ -16,3 +16,4 @@ error  :   configure: error: invalid value: boost_major_version=
         
 error  :   configure: error: cannot find the flags to link with Boost thread
             ./configure --with-boost=/usr/local/boost
+error  :    cannot find Boost headers version >= 1.39.0
