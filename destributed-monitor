@@ -26,7 +26,8 @@ sudo apt-get install uuid-dev
 
 
 1-install debian 7-amd64
-2-gearman-0.32
+2-gearman-0.32     
+        https://superuser.com/questions/80724/how-to-install-libevent-via-aptitude
 3-mod-gearman
 4-naemon
 5-thruk
