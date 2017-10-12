@@ -30,5 +30,7 @@ sudo apt-get install uuid-dev
         https://superuser.com/questions/80724/how-to-install-libevent-via-aptitude
 3-mod-gearman
         Install libltdl-dev
+        sudo apt-get install libncurses5-dev
+        https://packages.debian.org/source/wheezy/mod-gearman
 4-naemon
 5-thruk
