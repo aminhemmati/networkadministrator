@@ -21,3 +21,12 @@ error  :    cannot find Boost headers version >= 1.39.0
            
 
 sudo apt-get install libboost-all-dev
+install gearmand.0.34
+sudo apt-get install uuid-dev
+
+
+1-install debian 7-amd64
+2-gearman-0.32
+3-mod-gearman
+4-naemon
+5-thruk
