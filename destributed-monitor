@@ -29,5 +29,6 @@ sudo apt-get install uuid-dev
 2-gearman-0.32     
         https://superuser.com/questions/80724/how-to-install-libevent-via-aptitude
 3-mod-gearman
+        Install libltdl-dev
 4-naemon
 5-thruk
