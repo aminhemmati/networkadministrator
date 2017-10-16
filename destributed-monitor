@@ -34,3 +34,5 @@ sudo apt-get install uuid-dev
         https://packages.debian.org/source/wheezy/mod-gearman
 4-naemon
 5-thruk
+omd 
+        chang mod-german port to 0.0.0.0:4730
