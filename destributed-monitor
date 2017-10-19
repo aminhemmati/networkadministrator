@@ -36,3 +36,12 @@ sudo apt-get install uuid-dev
 5-thruk
 omd 
         chang mod-german port to 0.0.0.0:4730
+        
+---------------------------------------
+add repository to ubuntu and update and install omd
+1:  gpg --keyserver keys.gnupg.net --recv-keys F8C1CA08A57B9ED7
+2:  gpg --armor --export F8C1CA08A57B9ED7 | apt-key add -
+#Ubuntu Xenial (16.04)
+3:  echo "deb http://labs.consol.de/repo/stable/ubuntu $(lsb_release -cs) main" > /etc/apt/sources.list.d/labs-consol-stable.list
+4:  apt-get update
+5:  apt-get install omd
