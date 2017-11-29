@@ -10,3 +10,4 @@
       $ export {http,https,ftp}_proxy="http://PROXY_SERVER:PORT"
       $ unset {http,https,ftp}_proxy
       
+exampel $ export {http,https,ftp}_proxy="http://proxy1.allyouneed.local:3128"
