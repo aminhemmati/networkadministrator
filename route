@@ -1,5 +1,5 @@
 windows 
-       route ADD 132.133.200.0 MASK 255.255.255.0  63.197.142.1 METRIC 2
+       route ADD 132.133.200.0 MASK 255.255.255.255  63.197.142.1 METRIC 2
                                                    default gw
                                                     -p for permanent
  linux
