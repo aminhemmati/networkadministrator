@@ -4,3 +4,6 @@ windows
                                                     -p for permanent
  linux
         ip route add 132.133.200.8 via 63.197.142.1 dev eth0
+        permanent 
+        nano /etc/networ/interfaces
+                post-up route add -net 192.168.3.1 netmask 255.255.255.255 gw 10.23.97.1 dev p6p1
