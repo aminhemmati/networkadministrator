@@ -3,3 +3,6 @@ to create log file in Group polisi in client
 wie GPO seting on client 
    https://www.redspin.com/it-security-blog/2011/09/viewing-gpos-on-the-commandline/
    gpresult /H test.html
+Remove OU 
+        get-ADOrganizationalUnit -Identity "OU=Markedsforing,DC=testdomene,DC=local" | 
+                  set-ADOrganizationalUnit –ProtectedFromAccidentalDeletion $false
