@@ -1,0 +1,1 @@
+OCS-NG-Windows-Agent-Setup.exe /DEPLOY=2.3.0.0 /SERVER=http://ocs.allyouneed.local/ocsinventory /NO_SYSTRAY /NOSPLASH /SSL=0 /NOW /S
