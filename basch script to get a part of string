@@ -1,0 +1,19 @@
+
+	
+
+#!/bin/bash
+
+# original string
+str="some lines1 ====== some lines2 ======"
+
+# parse the string
+v1="${str%%=*}"  # beginning at right, remove all to ' ='
+tmp="${str%=*}"  # beginning at right, remove first occurrence of ' =*'
+v2="${tmp##*= }"  # beginning at left,  remove all to '= '
+
+# print the string and variable
+echo "str: $str"
+echo " v1: $v1"
+echo " v2: $v2"
+
+exit 0
