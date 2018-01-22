@@ -7,3 +7,13 @@ Chmod Guide
 5 - r-x
 6 - rw-
 7 - rwx
+------------------------------------------------###------------------------------------
+Just a note in DSM 6 to use:
+
+Code: Select all
+chmod -R 755 /volume1/homes/[username]
+
+
+The -R is to make it recursive, in case you already created the keys before running the chmod.
+
+----------------------------------------------####---------------------
