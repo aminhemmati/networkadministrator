@@ -2,6 +2,8 @@ windows
        route ADD 132.133.200.8 MASK 255.255.255.255  63.197.142.1 METRIC 2
                                                    default gw
                                                     -p for permanent
+       delet route 
+                 route delete ipaddress
  linux
         ip route add 132.133.200.8 via 63.197.142.1 dev eth0
         permanent 
