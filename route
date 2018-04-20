@@ -2,6 +2,8 @@ windows
        route ADD 132.133.200.8 MASK 255.255.255.255  63.197.142.1 METRIC 2
                                                    default gw
                                                     -p for permanent
+                                                    
+        route add -p 10.30.0.0 mask 255.255.0.0 10.23.98.100
        delet route 
                  route delete ipaddress
  linux
