@@ -1,0 +1,14 @@
+UBUNTU:
+Install authbind package
+#apt-get install authbind
+
+Make port 80 available to authbind (you need to be root):
+#touch /etc/authbind/byport/80
+#chmod 500 /etc/authbind/byport/80
+#chown tomcat7 /etc/authbind/byport/80
+
+#vi /etc/default/tomcat7
+Make the AUTHBIND=no to AUTHBIND=yes
+AUTHBIND=YES
+
+Now restart service
