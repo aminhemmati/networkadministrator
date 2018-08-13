@@ -1,0 +1,10 @@
+/etc/dhcp/dhclient.conf
+You’ll see lines like these:
+
+ #supersede domain-name "fugue.com home.vix.com";
+ #prepend domain-name-servers 127.0.0.1;
+
+Remove the preceding “#” and use the domain-name and domain-name-servers which you want. Save it. Now the DNS related changes will be permanent.
+
+sudo apt-get install resolvconf
+sudo gedit /etc/resolvconf/resolv.conf.d/base
