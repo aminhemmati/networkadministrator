@@ -6,3 +6,4 @@ wie GPO seting on client
 Remove OU 
         get-ADOrganizationalUnit -Identity "OU=Markedsforing,DC=testdomene,DC=local" | 
                   set-ADOrganizationalUnit –ProtectedFromAccidentalDeletion $false
+
