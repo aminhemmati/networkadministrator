@@ -7,4 +7,5 @@ You’ll see lines like these:
 Remove the preceding “#” and use the domain-name and domain-name-servers which you want. Save it. Now the DNS related changes will be permanent.
 
 sudo apt-get install resolvconf
+sudo systemctl disable systemd-resolved
 sudo gedit /etc/resolvconf/resolv.conf.d/base
