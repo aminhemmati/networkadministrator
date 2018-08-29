@@ -1,9 +1,0 @@
-to create log file in Group polisi in client
-   https://technet.microsoft.com/en-us/library/cc775423%28v=ws.10%29.aspx?f=255&MSPPError=-2147217396
-wie GPO seting on client 
-   https://www.redspin.com/it-security-blog/2011/09/viewing-gpos-on-the-commandline/
-   gpresult /H test.html
-Remove OU 
-        get-ADOrganizationalUnit -Identity "OU=Markedsforing,DC=testdomene,DC=local" | 
-                  set-ADOrganizationalUnit –ProtectedFromAccidentalDeletion $false
-
