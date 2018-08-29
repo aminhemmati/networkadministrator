@@ -1,3 +1,0 @@
-How To Set Up Apache Virtual Hosts on Ubuntu 16.04
-##Create the Directory Structure
-        sudo mkdir -p /var/www/example.com/public_html
