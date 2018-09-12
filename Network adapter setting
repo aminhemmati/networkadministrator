@@ -1,0 +1,9 @@
+
+https://blogs.technet.microsoft.com/bruce_adamczak/2013/01/23/windows-2012-core-survival-guide-default-gateway-settings/
+
+add deault gateway 
+         New-NetRoute -interfaceindex 15 -NextHop "192.168.0.1" -destinationprefix "0.0.0.0/0"
+       
+Removing the Default Gateway
+         Remove-NetRoute -ifindex 12 -NextHop "192.168.0.3"
+         
