@@ -1,0 +1,3 @@
+system info over powershell 
+
+                Get-ComputerInfo
