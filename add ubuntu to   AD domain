@@ -1,0 +1,76 @@
+sudo apt install krb5-user samba sssd chrony
+  182  nano /etc/krb5.conf
+                   
+Optionally, edit /etc/krb5.conf with a few additional settings to specify Kerberos ticket lifetime (these values are safe to use as defaults):
+[libdefaults]
+default_realm = MYUBUNTU.EXAMPLE.COM
+ticket_lifetime = 24h #
+renew_lifetime = 7d
+
+
+  183  nano /etc/chrony/chrony.conf
+[global]
+workgroup = MYUBUNTU
+client signing = yes
+client use spnego = yes
+kerberos method = secrets and keytab
+realm = MYUBUNTU.EXAMPLE.COM
+security = ads
+
+
+
+  184  nano /etc/sssd/sssd.conf
+[sssd]
+services = nss, pam
+config_file_version = 2
+domains = MYUBUNTU.EXAMPLE.COM
+[domain/MYUBUNTU.EXAMPLE.COM]
+id_provider = ad
+access_provider = ad
+# Use this if users are being logged in at /.
+# This example specifies /home/DOMAIN-FQDN/user as $HOME.  Use with pam_mkhomedir.so
+override_homedir = /home/%d/%u
+dyndns_update=true
+# Uncomment if the client machine hostname doesn't match the computer object on the DC.
+# ad_hostname = mymachine.myubuntu.example.com
+# Uncomment if DNS SRV resolution is not working
+# ad_server = dc.mydomain.example.com
+# Uncomment if the AD domain is named differently than the Samba domain
+# ad_domain = MYUBUNTU.EXAMPLE.COM
+# Enumeration is discouraged for performance reasons.
+# enumerate = true
+
+
+
+
+  185  nano  /etc/nsswitch.conf
+passwd:         compat sss
+group:          compat sss
+...
+netgroup:       nis sss
+sudoers:        files sss
+
+
+  186  nano /etc/hosts
+
+192.168.1.10 myserver myserver.myubuntu.example.com
+
+  189  sudo chown root:root /etc/sssd/sssd.conf
+  190  sudo chmod 600 /etc/sssd/sssd.conf
+  191  sudo systemctl restart chrony.service
+  192  /etc/samba/smb.conf
+[global]
+workgroup = MYUBUNTU
+client signing = yes
+client use spnego = yes
+kerberos method = secrets and keytab
+realm = MYUBUNTU.EXAMPLE.COM
+security = ads
+
+
+  194  sudo systemctl restart smbd.service nmbd.service
+  195  sudo systemctl start sssd.service
+  196  sudo kinit Administrator
+  198  sudo klist
+  199  sudo net ads join -k
+ 216  sudo su user@allyouneed.local
