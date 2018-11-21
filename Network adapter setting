@@ -7,3 +7,10 @@ add deault gateway
 Removing the Default Gateway
          Remove-NetRoute -ifindex 12 -NextHop "192.168.0.3"
          
+add second IP address 
+        New-NetIPAddress -InterfaceIndex 4 -IPAddress 192.168.0.26 -PrefixLength 22
+                          number of interface                       subnetmask  
+ Remove IP Address 
+        Remove-NetIPAddress -IPAddress 10.23.99.5
+to get a network adapter info like  index 
+        Get-NetAdapter
