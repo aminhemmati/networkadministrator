@@ -1,0 +1,66 @@
+Naemon-OMD-destributed
+
+Basic information
+
+Server: https://monitoring.allyouneed.local/master
+User and password can be found at the nextcloud'.
+
+Distributed monitoring installed over OMD package with Thruck interface and Namemon . OMD installed in /OMD location IP:10.23.96.128
+there is 2 worker for destributed monitoring .
+Worker master is installed on IP: 10.23.96.128 in location Berlin in server HVCLUSTER04
+Worker slave is installed on IP: 10.23.102.35 in location BOR in server BORHVW2016-01
+on Both slave and master created a site with name master.
+Slave worker setting file located in /10.23.102.35/omd/site/master/etc/mod-gearman/worker.cfg
+
+To restart omd site use this command:
+master is a site
+
+omd restart master
+
+
+
+
+to config master site use this command
+
+omd config master
+
+
+
+
+to start site mastre use this command.
+
+omd start master
+
+
+
+
+OMD Installation
+
+add OMD repository for Ubuntu-1604
+
+ echo "deb http://labs.consol.de/repo/stable/ubuntu $(lsb_release -cs) main"> /etc/apt/sources.list.d/labs-consol-stable.list
+  apt-get update
+  apt-get install omd
+
+
+
+
+Configuration
+
+The Host Configuration Files are in omd/sites/master/etc/nagios/conf.d
+
+Under omd/sites/master/etc/nagios/conf.d/allyouneed/cmd/ you can find the config
+files for check_multi. there is to Host Group
+Master and Slave
+worker master do check_host in host Group master
+worker slave do check_host in host Group slave
+
+each host must be a member of master or slave.
+
+Configuration new host or service is possible with web interface.
+**System >config Tools >Configuration Type: >Object
+
+====Additional Links====
+https://wiki.allyouneed.local/doku.php?id=nagios
+https://labs.consol.de/de/nagios/mod-gearman/index.html
+https://labs.consol.de/repo/stable/#_ubuntu_xenial_16_04
