@@ -1,9 +1,16 @@
+connect to mysql 
+       mysql -u USERNAME -p
+
 mysql: Show GRANTs for all users
         select * from information_schema.user_privileges;
         
 How to get a list of MySQL user accounts
         SELECT User FROM mysql.user;
-  
+To view a list of all users, type the following command from the mysql> prompt:
+        SELECT user FROM mysql.user GROUP BY user;
+DELETING USERS
+        DELETE FROM mysql.user WHERE user = 'username';
+ 
 To list database type the following command at mysql prompot:
         show databases;
         
