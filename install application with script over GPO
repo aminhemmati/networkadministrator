@@ -1,0 +1,30 @@
+@echo on
+set  log=c:\scripts\%~n0.log 
+set limit-space=10
+
+::  get free space on drive c:
+FOR /F "delims=" %%i IN ('dir c:\') DO (set space=%%i)
+set process_01=%space%
+set process_02=%process_01:~-26%
+set result=%process_04% 
+set /a var=%process_02%
+
+if %var% GEQ    %limit-space% (
+::  Map share drive 
+    echo start to map and copy file at  %time% : %date%  >> %log%
+	echo  Begin Mapping Drives
+	net use  \\jarvis\software\old-calc /user:\ocsdeploy password  
+::  copy  windows 10 new bild on c:\uninstall\	
+	echo Start copy ...
+	robocopy "\\jarvis\software\old-calc" "C:\uninstall\calc"  /S  /NS /NC /NFL /NDL /NP  >> %log% 
+	
+    ) ELSE  (
+::  Error message if there isn't Enough Free space
+    echo %TIME% >> %log%
+	echo Not Enough Free space. >> %log% 
+	echo Min Freespace: %limit-space% GB  >> %log%
+	echo Current Freespace: %var% GB >> %log%  
+	   )
+C:\uninstall\calc\Old_Calculator_for_Windows_10.exe /s	 >> %log%  
+echo end of Scrip at   %time% : %date%  >> %log%   
+exit
