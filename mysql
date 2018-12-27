@@ -9,3 +9,8 @@ To list database type the following command at mysql prompot:
         
         ##Now list tables, run:
          show tables;
+         
+to Backup database 
+          mysqldump --add-drop-database --databases xwiki > xwiki.sql
+to restor database
+          mysql -p -u username database_name < file.sql 
