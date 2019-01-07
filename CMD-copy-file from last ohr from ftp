@@ -1,0 +1,43 @@
+@echo on &setlocal
+
+set "SCRIPTFOLDER=c:\scripts"
+set "SORTDATE=%date:~-4%-%date:~3,2%-%date:~0,2%"
+set "LOGFOLDER=c:\scripts\log"
+set "LOGFILE=%LOGFOLDER%\%SORTDATE%_%~n0.log"
+
+set "MAIL=%SCRIPTFOLDER%\sendemail.vbs"
+set "TO=caution@ayngmbh.de"
+set "WINSCP=c:\scripts\winscp\winscp.com"
+rem set datetimef=%date:~-4%_%date:~3,2%_%date:~0,2%__%time:~0,2%_%time:~3,2%_%time:~6,2%
+set "FILEDATEHOUR=%date:~-4%%date:~3,2%%date:~0,2%%time:~0,2%"
+set "FILEDATEHOUR=%FILEDATEHOUR: =0%
+set FILENAME=ELSendEx-%FILEDATEHOUR%
+set "DLFOLDER=C:\Data\DirektlieferungParcelID\ClickandGrill\Inbox"
+
+rem cleanup logfiles older 7 days
+forfiles /P %LOGFOLDER%\ /M *_%~n0.log /d -30 /c "cmd /c del @file /s /q" 
+
+echo. >> %LOGFILE%
+echo ----------------------- Script Start ----------------------- >> %LOGFILE%
+echo. >> %LOGFILE%
+
+if not exist %WINSCP% (
+	%MAIL% %TO% "Script Aborted - winscp.exe is missing!" 
+	exit 1
+	) else (
+	%WINSCP% /log=%LOGFILE% /command ^
+    "open clickandgrill" ^
+    "get %FILENAME%*.csv %DLFOLDER%" ^
+    "exit"
+	echo. >> %LOGFILE%
+	echo ----------------------- Script Ende ----------------------- >> %LOGFILE%
+	echo. >> %LOGFILE%
+	exit 0
+	)
+	
+exit
+rem Changelog:
+rem 2017-04-25 - Script erstellt
+rem 2017-04-26 - %FILDATE% nach %FILEDATEHOUR% geändert um die Stunde im Dateiennamen abzugreifen
+rem 2017-04-26 - Cleanup für logfiles älter als 7 Tage hinzugefügt
+rem 2017-05-03 - DLFOLDER Pfad geändert
