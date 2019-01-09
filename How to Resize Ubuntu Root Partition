@@ -3,6 +3,7 @@ Step 1 Before we get started run pvdisplay in order to see the current state of 
 
 Step 2 Manipulate the disk partition table with fdisk
          fdisk /dev/sdb
+         n   (create new partition, select start and end cylinders, all free space is selected by default)
          Using default response p
          Using default value 2
     
