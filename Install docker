@@ -29,3 +29,7 @@ Verify that Docker CE is installed correctly by running the hello-world image.
                        
                        
   
+Dokuwiki container  
+  
+           .    curl -sSL https://raw.githubusercontent.com/bitnami/bitnami-docker-dokuwiki/master/docker-compose.yml > docker-compose.yml
+           .   docker-compose up -d
