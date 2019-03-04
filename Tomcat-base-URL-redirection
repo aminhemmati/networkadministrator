@@ -1,7 +1,0 @@
-Open webapp/ROOT/WEB-INF/web.xml, remove any servlet mapping with path /index.html or /index.jsp, and save.
-
-Remove webapp/ROOT/index.html, if it exists.
-
-Create the file webapp/ROOT/index.jsp with this line of content:
-
-<% response.sendRedirect("/some/where"); %>
