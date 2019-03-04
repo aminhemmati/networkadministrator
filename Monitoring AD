@@ -1,0 +1,17 @@
+command[ check_ad_service ]             = check_nrpe -H $HOSTADDRESS$ -c CheckServiceState -a ShowAll NTDS=started
+command[ check_ad_Advertising ]         = check_nrpe -H $HOSTADDRESS$ -c check_active_directory -a Advertising
+#command[ check_ad_FrsEvent ]           = check_nrpe -H $HOSTADDRESS$ -c check_active_directory -a FrsEvent
+#command[ check_ad_DFSREvent ]          = check_nrpe -H $HOSTADDRESS$ -c check_active_directory -a DFSREvent
+#command[ check_ad_SysVolCheck ]        = check_nrpe -H $HOSTADDRESS$ -c check_active_directory -a SysVolCheck
+#command[ check_ad_KccEvent ]           = check_nrpe -H $HOSTADDRESS$ -c check_active_directory -a KccEvent
+#command[ check_ad_KnowsOfRoleHolde ]   = check_nrpe -H $HOSTADDRESS$ -c check_active_directory -a KnowsOfRoleHolde
+command[ check_ad_MachineAccount ]      = check_nrpe -H $HOSTADDRESS$ -c check_active_directory -a MachineAccount
+#command[ check_ad_NCSecDesc ]          = check_nrpe -H $HOSTADDRESS$ -c check_active_directory -a NCSecDesc
+command[ check_ad_NetLogons ]           = check_nrpe -H $HOSTADDRESS$ -c check_active_directory -a NetLogons
+#command[ check_ad_ObjectsReplicate ]   = check_nrpe -H $HOSTADDRESS$ -c check_active_directory -a ObjectsReplicate
+command[ check_ad_Replications ]        = check_nrpe -H $HOSTADDRESS$ -c check_active_directory -a Replications
+command[ check_ad_RidManager ]          = check_nrpe -H $HOSTADDRESS$ -c check_active_directory -a RidManager
+command[ check_ad_Services ]            = check_nrpe -H $HOSTADDRESS$ -c check_active_directory -a Services
+#command[ check_ad_SystemLog ]          = check_nrpe -H $HOSTADDRESS$ -c check_active_directory -a SystemLog
+#command[ check_ad_VerifyReferences ]   = check_nrpe -H $HOSTADDRESS$ -c check_active_directory -a VerifyReferences
+
