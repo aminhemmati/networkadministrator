@@ -1,7 +1,0 @@
-Find Windows 10 Product Key on an a New Computer
-
-The product key for new computers that come preinstalled with Windows 10 has the product key stored within the motherboard firmware. Users can retrieve it by issuing a command from the command prompt.
-
-    Press Windows key + X
-    Click Command Prompt (Admin)
-    At the command prompt, type wmic path SoftwareLicensingService get OA3xOriginalProductKey
