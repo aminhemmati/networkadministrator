@@ -33,3 +33,6 @@ Remove the preceding “#” and use the domain-name and domain-name-servers whi
 sudo apt-get install resolvconf
 sudo systemctl disable systemd-resolved
 nano  /etc/resolvconf/resolv.conf.d/base
+      nameserver xx.xx.xx.xx xx.xx.xx.xx
+      search domain.local
+
