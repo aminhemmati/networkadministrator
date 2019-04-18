@@ -1,0 +1,18 @@
+check_command : -f /omd/sites/master/etc/nagios/conf.d/allyouneed/cmd/hypervcluster_G-02.cmd -s HOSTADDRESS=10.23.96.68 -r 1+32768
+
+hypervcluster_G-02.cmd :
+
+command[ Host ]         = check_ping -H $HOSTADDRESS$ -w 5000,100% -c 5000,100% -p 1 -4
+#command[ Lexmark_10.23.102.134 ]   = check_ping -H 10.23.102.134 -w 5000,100% -c 5000,100% -p 1 -4
+#command[ Zebra_10.23.102.160 ] = check_ping -H 10.23.102.160 -w 5000,100% -c 5000,100% -p 1 -4
+command[ System_Check ] = check_multi -f /omd/sites/master/etc/nagios/conf.d/allyouneed/cmd/windowsdefaultnrpe.cmd
+ 
+
+windowsdefaultnrpe.cmd :
+
+command[ check_cpuload ]                        = check_nt -H $HOSTADDRESS$ -p 12489 -s allyoupass -v CPULOAD -l 5,80,90
+command[ check_mem ]                            = check_nt -H $HOSTADDRESS$ -p 12489 -s allyoupass -v MEMUSE -w 95 -c 98
+command[ check_diskspace ]                      = check_nt -H $HOSTADDRESS$ -p 12489 -s allyoupass -v USEDDISKSPACE -w 94 -c 96 -l c
+command[ check_uptime ]                         = check_nt -H $HOSTADDRESS$ -p 12489 -s allyoupass -v UPTIME
+command[ wsus_service_stopped ]                 = check_nrpe -H $HOSTADDRESS$ -c CheckServiceState -a ShowAll wuauserv=stopped
+
