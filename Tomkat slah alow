@@ -1,6 +1,0 @@
-nano   /etc/tomcat8/catalina.properties
-
-       -Dorg.apache.tomcat.util.buf.UDecoder.ALLOW_ENCODED_SLASH=true
--Dorg.apache.catalina.connector.CoyoteAdapter.ALLOW_BACKSLASH=true
-
-somtime without -D
